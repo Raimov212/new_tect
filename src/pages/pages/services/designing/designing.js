@@ -11,13 +11,13 @@ const ServiceContainer = () => {
           variant="h4"
           fontWeight="600"
           color="#fff"
-          data-aos="zoom-in-down"
+          data-aos="zoom-in-up"
           data-aos-duration="2000"
         >
           SERVICE
         </Typography>
       </Box>
-      <Container data-aos="fade-up" data-aos-duration="2000">
+      <Container data-aos="fade-down" data-aos-duration="2000">
         <Description id="designing">
           <Box className="companyTitle">
             <Typography>

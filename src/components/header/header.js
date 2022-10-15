@@ -3,7 +3,7 @@ import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Dropdown, Menu, Space } from "antd";
 import i18next from "i18next";
 import React, { useEffect, useState } from "react";
-import { MenuList } from "../data/MenuList";
+import { menuList } from "../data/MenuList";
 import { ContainerWrapper, StyleToolbar, Wrapper } from "./style_header";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -11,11 +11,11 @@ import { useTranslation } from "react-i18next";
 const Sidebar = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
-  console.log(matches);
   const navigate = useNavigate();
   const { t, ready } = useTranslation();
 
   const handleMenuList = (e) => {
+    setOpen(null);
     if (e.keyPath[1] === "/company") {
       navigate(e.keyPath[1]);
     } else if (e.keyPath[1] === "/services") {
@@ -37,7 +37,7 @@ const Sidebar = () => {
   const [open, setOpen] = useState(null);
 
   const handleClick = () => {
-    setOpen(!open);
+    setOpen((prev) => !prev);
   };
 
   const menu = (
@@ -60,8 +60,6 @@ const Sidebar = () => {
     />
   );
 
-  console.log("test", open && MenuList());
-
   return (
     <Wrapper>
       <ContainerWrapper maxWidth="lg">
@@ -76,7 +74,6 @@ const Sidebar = () => {
             >
               {ready ? t("header.LogoTitle") : []}
             </Typography>
-
             <DehazeRounded
               sx={{
                 display: { xs: "block", sm: "none" },
@@ -84,31 +81,35 @@ const Sidebar = () => {
               }}
               onClick={handleClick}
             />
-            <Box sx={{ display: { xs: "block", sm: "none" } }}>
-              {/* {open ? ( */}
-                <Box className="smMenu">
-                  <Menu
-                    onClick={handleMenuList}
-                    defaultSelectedKeys={["1"]}
-                    defaultOpenKeys={["sub1"]}
-                    mode={matches ? "inline" : "horizontal"}
-                    items={MenuList().length > 0 && MenuList()}
-                  />
+          </Box>
+          <Box
+            className="noneMenu"
+            sx={{ display: { xs: "block", sm: "none" } }}
+          >
+            {open ? (
+              <Box className="smMenu">
+                <Menu
+                  onClick={handleMenuList}
+                  defaultSelectedKeys={["1"]}
+                  defaultOpenKeys={["sub1"]}
+                  mode={matches ? "inline" : "horizontal"}
+                  items={menuList({ t, ready })}
+                />
+                <Box pl={2} width="100%" bgcolor={"#fff"}>
                   {menu}
                 </Box>
-              {/* ) : (
-                <Box></Box>
-              )} */}
-            </Box>
+              </Box>
+            ) : (
+              <Box></Box>
+            )}
           </Box>
-
           <Box className="Menu" sx={{ display: { xs: "none", sm: "block" } }}>
             <Menu
               onClick={handleMenuList}
               defaultSelectedKeys={["1"]}
               defaultOpenKeys={["sub1"]}
               mode={matches ? "inline" : "horizontal"}
-              items={MenuList()}
+              items={menuList({ t, ready })}
             />
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>

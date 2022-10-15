@@ -25,24 +25,24 @@ export const StyleToolbar = styled(Toolbar)(({ theme }) => ({
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       alignItems: "center",
-      // gap: "10rem",
+      gap: "10rem",
     },
   },
   ".text": {
     cursor: "pointer",
     flex: "1",
-    // [theme.breakpoinsts.down("sm")] : {
-
-    // }
   },
   ".smMenu": {
+    width: "250px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    position: "sticky",
-    top: 0,
+    position: "absolute",
+    top: "60px",
+    left: "0rem",
     zIndex: "1000",
   },
+
   ".Menu": {
     flex: "10",
     width: "900px",

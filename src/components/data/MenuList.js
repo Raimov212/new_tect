@@ -1,10 +1,7 @@
 import { ExpandMore } from "@mui/icons-material";
-import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
-export const MenuList = () => {
-  const { t, ready } = useTranslation();
-
+export const menuList = ({ t, ready }) => {
   return [
     {
       key: "/",
