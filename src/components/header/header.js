@@ -95,7 +95,12 @@ const Sidebar = () => {
                   mode={matches ? "inline" : "horizontal"}
                   items={menuList({ t, ready })}
                 />
-                <Box pl={2} width="100%" bgcolor={"#fff"}>
+                <Box
+                  onClick={() => setOpen(null)}
+                  pl={2}
+                  width="100%"
+                  bgcolor={"#fff"}
+                >
                   {menu}
                 </Box>
               </Box>
