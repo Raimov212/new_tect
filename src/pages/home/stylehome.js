@@ -24,9 +24,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
 export const Top = styled(Box)(({ theme }) => ({
   width: "100%",
   height: "500px",
-  backgroundImage: `url(
-    "https://www.kibrispdr.org/data/50/cool-background-hd-26.jpg"
-  )`,
+  backgroundColor: "#1F3A93  ",
   boxShadow: "inset 0 -25px 22px 14px rgba(0,0,0,0.4);",
   borderBottomLeftRadius: "30% ",
   borderBottomRightRadius: "30% ",

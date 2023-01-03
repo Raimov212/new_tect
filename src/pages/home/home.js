@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import Cards from "./card/card";
 import News from "./news/news";
-import {  Top, Wrapper } from "./stylehome";
+import { Top, Wrapper } from "./stylehome";
 
 const Home = () => {
   const { t, ready } = useTranslation();
@@ -18,6 +18,7 @@ const Home = () => {
           className="Content"
           data-aos="zoom-in-down"
           data-aos-duration="2000"
+          
         >
           <Typography
             fontWeight={"600"}

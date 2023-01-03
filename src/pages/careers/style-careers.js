@@ -15,9 +15,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    backgroundImage: `url(
-      "https://www.kibrispdr.org/data/50/cool-background-hd-26.jpg"
-    )`,
+    backgroundColor: "#1F3A93  ",
     boxShadow: "inset 0 -25px 22px 14px rgba(0,0,0,0.4);",
     borderBottomLeftRadius: "30% ",
     borderBottomRightRadius: "30% ",
@@ -28,9 +26,9 @@ export const Wrapper = styled(Box)(({ theme }) => ({
     marginBottom: "5rem",
     display: "flex",
     alignItems: "center",
-    [theme.breakpoints.down("sm")] : {
-      display : "flex",
-      flexDirection : "column"
-    }
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+    },
   },
 }));

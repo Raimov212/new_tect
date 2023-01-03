@@ -7,8 +7,4 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-
-  ".Content": {
-   
-  },
 }));

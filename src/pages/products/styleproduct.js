@@ -11,9 +11,7 @@ export const Wrapper = styled(Box)(({ theme }) => ({
   ".Content": {
     width: "100%",
     height: "200px",
-    backgroundImage: `url(
-      "https://www.kibrispdr.org/data/50/cool-background-hd-26.jpg"
-    )`,
+    backgroundColor: "#1F3A93",
     borderBottomLeftRadius: "30% ",
     borderBottomRightRadius: "30% ",
     boxShadow: "inset 0 -25px 22px 14px rgba(0,0,0,0.4);",
